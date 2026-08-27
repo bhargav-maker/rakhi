@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+<title>Raksha Bandhan ✦ 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;height:100dvh;overflow:hidden;background:#050508;color:#fff;font-family:"Cormorant Garamond",Georgia,serif}
+
+/* Background Atmosphere */
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.ab{position:absolute;border-radius:50%;filter:blur(90px);animation:am 18s ease-in-out infinite}
+.ab1{width:360px;height:360px;background:radial-gradient(circle,rgba(255,215,0,0.18),transparent 70%);top:-100px;left:-80px}
+.ab2{width:340px;height:340px;background:radial-gradient(circle,rgba(212,175,55,0.12),transparent 70%);bottom:-90px;right:-80px;animation-delay:-6s}
+@keyframes am{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-25px) scale(1.1)}}
+
+#bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+/* Mobile Frame Container */
+#app{
+  position:relative;z-index:2;width:100%;height:100%;height:100dvh;
+  display:flex;align-items:center;justify-content:center;
+  padding:calc(8px + env(safe-area-inset-top, 0px)) 10px calc(8px + env(safe-area-inset-bottom, 0px));
+}
+
+.frame{
+  position:relative;width:100%;max-width:430px;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  overflow:hidden;border-radius:14px;
+  background:radial-gradient(ellipse at 50% 12%, #140e1a 0%, #08060c 55%, #030306 100%) padding-box,
+             linear-gradient(135deg,#FFD700 0%,#8A6D1B 20%,#FFE57F 40%,#D4AF37 60%,#FFD700 80%,#9A7B1E 100%) border-box;
+  border:2px solid transparent;
+  box-shadow:0 0 35px rgba(255,215,0,0.22),0 0 80px rgba(255,140,0,0.08),inset 0 0 55px rgba(0,0,0,0.92);
+}
+
+.frame::before{
+  content:"";position:absolute;inset:5px;
+  border:1px solid rgba(255,215,0,0.25);border-radius:10px;
+  pointer-events:none;z-index:200;
+  box-shadow:inset 0 0 15px rgba(255,215,0,0.06);
+}
+
+/* Corner Filigrees */
+.crn{position:absolute;width:50px;height:50px;z-index:201;pointer-events:none;filter:drop-shadow(0 0 6px rgba(255,215,0,0.5))}
+.crn.tl{top:3px;left:3px}.crn.tr{top:3px;right:3px;transform:scaleX(-1)}.crn.bl{bottom:3px;left:3px;transform:scaleY(-1)}.crn.br{bottom:3px;right:3px;transform:scale(-1,-1)}
+
+/* 3D Scene Flip Container */
+#scene{width:100%;flex:1;display:flex;align-items:center;justify-content:center;perspective:1400px;overflow:hidden;padding:4px 8px}
+#cf{width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.85s cubic-bezier(0.34,1.2,0.64,1);position:relative}
+#cf.flipped{transform:rotateY(180deg)}
+
+.face{
+  width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+}
+.face.back{transform:rotateY(180deg);padding:8px 8px}
+
+/* Headings */
+.head-block{display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px}
+.dbar{display:flex;align-items:center;gap:6px;width:100%}
+.dl{width:50px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.85),transparent)}
+.dd{width:6px;height:6px;background:#FFD700;transform:rotate(45deg);box-shadow:0 0 8px #FFD700}
+.ds{width:3px;height:3px;background:#D4AF37;transform:rotate(45deg);opacity:0.8}
+
+.tey{font-family:"Cinzel",serif;font-size:0.56rem;letter-spacing:0.38em;color:#D4AF37;text-transform:uppercase;opacity:0.95}
+.tmain{
+  font-family:"Cinzel Decorative",serif;font-size:clamp(1.3rem,5.5vw,1.65rem);font-weight:900;text-align:center;
+  background:linear-gradient(135deg,#9A7B1E 0%,#FFD700 30%,#FFFACD 50%,#FFD700 70%,#9A7B1E 100%);
+  background-size:220% 220%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shim 3.5s linear infinite;filter:drop-shadow(0 0 14px rgba(255,215,0,0.45));line-height:1.2;
+}
+@keyframes shim{0%{background-position:200% 50%}100%{background-position:-200% 50%}}
+.tsub{font-size:0.78rem;color:#E8D9A0;letter-spacing:0.22em;font-style:italic;font-weight:300}
+
+/* Center Detailed 3D Sacred Rakhi */
+.rbwrap{
+  position:relative;width:100px;height:100px;display:flex;align-items:center;justify-content:center;
+  margin:2px 0;cursor:pointer;perspective:600px;
+}
+.pr{position:absolute;border-radius:50%;border:1.5px solid rgba(255,215,0,0.5);animation:pls 2.8s ease-out infinite}
+.pr:nth-child(1){width:60px;height:60px;animation-delay:0s}
+.pr:nth-child(2){width:60px;height:60px;animation-delay:1.4s}
+@keyframes pls{0%{transform:scale(0.8);opacity:0.95}100%{transform:scale(2.3);opacity:0}}
+.rsvg{
+  width:92px;height:92px;position:relative;z-index:1;
+  animation:rf 4s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,215,0,0.85));
+}
+@keyframes rf{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(3deg)}}
+
+.sh2{font-family:"Cinzel",serif;font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFD700;text-shadow:0 0 8px rgba(255,215,0,0.5)}
+
+/* Horizontal Scrolling Carousel */
+.slider-container{
+  width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;padding:8px 4px 12px;
+  scrollbar-width:none;
+}
+.slider-container::-webkit-scrollbar{display:none}
+
+.sg-horizontal{
+  display:flex;gap:10px;width:max-content;
+}
+
+.sb{
+  flex:0 0 calc(50vw - 32px);max-width:180px;height:128px;
+  scroll-snap-align:start;
+  background:linear-gradient(145deg,rgba(255,215,0,0.12),rgba(212,175,55,0.03));
+  border:1px solid rgba(255,215,0,0.28);border-radius:13px;padding:12px 8px 10px;
+  cursor:pointer;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  transition:all 0.22s cubic-bezier(0.34,1.3,0.64,1);outline:none;position:relative;overflow:hidden;
+  box-shadow:0 6px 16px rgba(0,0,0,0.4),inset 0 0 10px rgba(255,215,0,0.04);
+}
+.sb::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,215,0,0.2),transparent);opacity:0;transition:opacity 0.2s}
+.sb:active{transform:scale(0.93);border-color:#FFD700;background:rgba(255,215,0,0.22);box-shadow:0 0 22px rgba(255,215,0,0.5)}
+.sb:active::after{opacity:1}
+
+.sav{
+  width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,215,0,0.35),rgba(154,123,30,0.2));
+  border:1.2px solid rgba(255,215,0,0.65);display:flex;align-items:center;justify-content:center;
+  font-family:"Cinzel",serif;font-size:0.85rem;font-weight:800;color:#FFD700;
+  box-shadow:0 0 10px rgba(255,215,0,0.35);
+}
+.snm{font-family:"Cinzel",serif;font-size:0.75rem;font-weight:700;color:#FFF8DC;letter-spacing:0.04em}
+.stg{font-size:0.48rem;color:#E8D9A0;opacity:0.75;line-height:1.2;font-style:italic}
+.hint{font-size:0.52rem;color:rgba(212,175,55,0.55);font-style:italic;letter-spacing:0.16em;padding-bottom:1px}
+
+/* Back Face / Greeting Card View */
+.cnm{
+  font-family:"Cinzel Decorative",serif;font-size:clamp(1.35rem,5.8vw,1.75rem);font-weight:900;text-align:center;
+  background:linear-gradient(135deg,#9A7B1E 0%,#FFD700 45%,#FFFACD 60%,#FFD700 80%,#9A7B1E 100%);
+  background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shim 3.5s linear infinite;filter:drop-shadow(0 0 15px rgba(255,215,0,0.5));
+}
+.ctg{font-family:"Cinzel",serif;font-size:0.56rem;color:#D4AF37;letter-spacing:0.22em;text-transform:uppercase;opacity:0.95;text-align:center}
+
+.orn{display:flex;align-items:center;gap:6px;width:78%}
+.ol{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.6))}
+.or{flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,0.6),transparent)}
+.gem{width:6px;height:6px;background:#FFD700;transform:rotate(45deg);box-shadow:0 0 8px #FFD700}
+
+.mrk{width:46px;height:46px;filter:drop-shadow(0 0 16px rgba(255,215,0,0.75));animation:rf 3s ease-in-out infinite;flex-shrink:0}
+
+.mbox{
+  background:linear-gradient(145deg,rgba(255,215,0,0.1) 0%,rgba(212,175,55,0.02) 100%);
+  border:1.4px solid rgba(255,215,0,0.35);border-radius:13px;
+  padding:15px 13px;width:100%;flex:1;max-height:225px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  box-shadow:inset 0 0 35px rgba(0,0,0,0.7),0 0 25px rgba(255,215,0,0.08);
+}
+.mbox::before{
+  content:"\201C";position:absolute;top:-8px;left:8px;
+  font-family:Georgia,serif;font-size:4.5rem;color:#FFD700;opacity:0.16;pointer-events:none;
+}
+.mtxt{font-size:clamp(0.86rem,2.9vw,1rem);color:#FFF5D6;line-height:1.78;text-align:center;font-style:italic;position:relative;z-index:1}
+
+/* Actions */
+.actions{display:flex;flex-direction:column;align-items:center;gap:7px;width:100%;margin-top:3px}
+.bprim{
+  position:relative;width:88%;
+  background:linear-gradient(135deg,#9A7B1E 0%,#FFD700 48%,#FFFACD 52%,#FFD700 56%,#9A7B1E 100%);
+  background-size:220% 220%;color:#060608;border:none;border-radius:50px;
+  padding:12px 20px;font-family:"Cinzel",serif;font-size:0.76rem;font-weight:800;letter-spacing:0.14em;
+  cursor:pointer;box-shadow:0 0 28px rgba(255,215,0,0.45),0 4px 15px rgba(0,0,0,0.6);
+  transition:all 0.2s cubic-bezier(0.4,0,0.2,1);outline:none;
+}
+.bprim:active{transform:scale(0.93);box-shadow:0 0 45px rgba(255,215,0,0.85)}
+.bsec{
+  background:transparent;border:1px solid rgba(212,175,55,0.4);border-radius:50px;
+  padding:7px 22px;font-family:"Cinzel",serif;font-size:0.64rem;letter-spacing:0.12em;
+  color:rgba(212,175,55,0.85);outline:none;transition:all 0.2s;
+}
+.bsec:active{transform:scale(0.94);color:#FFD700;border-color:#FFD700;background:rgba(255,215,0,0.1)}
+
+.ff{font-family:"Cinzel",serif;font-size:0.46rem;color:rgba(212,175,55,0.45);letter-spacing:0.28em;text-transform:uppercase;text-align:center;padding:3px 0}
+</style>
+</head>
+<body>
+
+<div class="aurora">
+  <div class="ab ab1"></div>
+  <div class="ab ab2"></div>
+</div>
+<canvas id="bg"></canvas>
+
+<div id="app">
+<div class="frame">
+  <svg class="crn tl" viewBox="0 0 66 66" fill="none">
+    <path d="M2 2L24 2L24 4.5L4.5 4.5L4.5 24L2 24Z" fill="#FFD700" opacity="0.85"/>
+    <circle cx="22" cy="22" r="8" stroke="#FFD700" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <circle cx="22" cy="22" r="3" fill="#FFD700"/>
+    <path d="M30 22 Q46 26 56 22" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+    <path d="M22 30 Q26 46 22 56" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+  </svg>
+  <svg class="crn tr" viewBox="0 0 66 66" fill="none">
+    <path d="M2 2L24 2L24 4.5L4.5 4.5L4.5 24L2 24Z" fill="#FFD700" opacity="0.85"/>
+    <circle cx="22" cy="22" r="8" stroke="#FFD700" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <circle cx="22" cy="22" r="3" fill="#FFD700"/>
+    <path d="M30 22 Q46 26 56 22" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+    <path d="M22 30 Q26 46 22 56" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+  </svg>
+  <svg class="crn bl" viewBox="0 0 66 66" fill="none">
+    <path d="M2 2L24 2L24 4.5L4.5 4.5L4.5 24L2 24Z" fill="#FFD700" opacity="0.85"/>
+    <circle cx="22" cy="22" r="8" stroke="#FFD700" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <circle cx="22" cy="22" r="3" fill="#FFD700"/>
+    <path d="M30 22 Q46 26 56 22" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+    <path d="M22 30 Q26 46 22 56" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+  </svg>
+  <svg class="crn br" viewBox="0 0 66 66" fill="none">
+    <path d="M2 2L24 2L24 4.5L4.5 4.5L4.5 24L2 24Z" fill="#FFD700" opacity="0.85"/>
+    <circle cx="22" cy="22" r="8" stroke="#FFD700" stroke-width="1.2" fill="none" opacity="0.9"/>
+    <circle cx="22" cy="22" r="3" fill="#FFD700"/>
+    <path d="M30 22 Q46 26 56 22" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+    <path d="M22 30 Q26 46 22 56" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+  </svg>
+
+  <div id="scene">
+    <div id="cf">
+      <div class="face front">
+        <div class="head-block">
+          <div class="dbar"><div class="dl"></div><div class="ds"></div><div class="dd"></div><div class="ds"></div><div class="dl"></div></div>
+          <span class="tey">&#10022; Sacred Celebration &#10022;</span>
+          <span class="tmain">Raksha Bandhan</span>
+          <span class="tsub">A Bond Woven in Gold</span>
+        </div>
+
+        <div class="rbwrap" id="rakhiHero">
+          <div class="pr"></div><div class="pr"></div>
+          <svg class="rsvg" viewBox="0 0 130 130" fill="none">
+            <circle cx="65" cy="65" r="58" stroke="#FFD700" stroke-width="1.2" stroke-dasharray="5 4" fill="none" opacity="0.45"/>
+            <circle cx="65" cy="65" r="46" stroke="#FFD700" stroke-width="1.4" fill="none" opacity="0.6"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(0 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(45 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(90 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(135 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(180 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(225 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(270 65 65)"/>
+            <ellipse cx="65" cy="25" rx="9" ry="19" fill="rgba(255,215,0,0.22)" stroke="#FFD700" stroke-width="1" transform="rotate(315 65 65)"/>
+            <circle cx="65" cy="65" r="22" fill="rgba(212,175,55,0.25)" stroke="#FFD700" stroke-width="1.8"/>
+            <circle cx="65" cy="65" r="8" fill="#FFD700"/>
+            <circle cx="65" cy="65" r="4" fill="#FFFACD"/>
+            <path d="M88 65 Q104 70 120 65" stroke="#D4AF37" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M42 65 Q26 60 10 65" stroke="#D4AF37" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <p class="sh2">&#10077; Swipe & Choose Sister &#10078;</p>
+        
+        <div class="slider-container">
+          <div class="sg-horizontal" id="sg"></div>
+        </div>
+
+        <p class="hint">swipe horizontally &bull; tap to reveal card</p>
+      </div>
+
+      <div class="face back">
+        <div class="head-block">
+          <span class="tey">&#10022; A Message of Love &#10022;</span>
+          <span class="cnm" id="cn">-</span>
+          <span class="ctg" id="ct">-</span>
+        </div>
+
+        <div class="orn"><div class="ol"></div><div class="ds"></div><div class="gem"></div><div class="ds"></div><div class="or"></div></div>
+
+        <svg class="mrk" viewBox="0 0 90 90" fill="none">
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(0 45 45)"/>
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(60 45 45)"/>
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(120 45 45)"/>
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(180 45 45)"/>
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(240 45 45)"/>
+          <ellipse cx="45" cy="19" rx="7" ry="14" fill="rgba(255,215,0,0.3)" stroke="#FFD700" stroke-width="0.9" transform="rotate(300 45 45)"/>
+          <circle cx="45" cy="45" r="16" fill="rgba(212,175,55,0.22)" stroke="#FFD700" stroke-width="1.5"/>
+          <circle cx="45" cy="45" r="7" fill="#FFD700"/>
+        </svg>
+
+        <div class="mbox"><p class="mtxt" id="cm">-</p></div>
+
+        <div class="actions">
+          <button class="bprim" id="bcel">Celebrate with Sparks ✨</button>
+          <button class="bsec" id="bback">&#8592; Back to Sisters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ff">&#10022; Raksha Bandhan 2026 &#10022;</div>
+</div>
+</div>
+
+<script>
+var S=[
+  {id:"tanu",name:"Tanu",tag:"Playful & Joyful Sister",msg:"To the most bubbly and playful little sister who fills every room with joy! Your infectious laughter and sweet mischief always make my day brighter. Never stop spreading this pure happiness wherever you go. Happy Raksha Bandhan, Tanu!"},
+  {id:"chimu",name:"Chimu",tag:"Creative Designer Big Sister",msg:"To our superstar designer big sister with unmatched style and creativity! You might show a little sass on the outside, but we all know you have the kindest, most open heart. Your bold artistic vision inspires me every single day. Wishing you a fabulous Raksha Bandhan, Chimu didi!"},
+  {id:"advika",name:"Advika",tag:"Joyful & Smiling Sister",msg:"To my wonderful school sister who brings a warm, constant smile to every single day! Even though we connected recently, your positive and joyful energy is truly special. Keep shining bright and staying as lovely as you are. Happy Raksha Bandhan, Advika!"},
+  {id:"anvika",name:"Anvika",tag:"Playful Spark & Connector",msg:"To the sister who knows how to bring everyone together with pure fun and high energy! Your playful spirit and cheerful vibe turn any ordinary moment into a celebration. Never lose that brilliant spark of yours. Wishing you a super joyful Raksha Bandhan, Anvika!"},
+  {id:"jivika",name:"Jivika",tag:"Creative Artist & Open Mind",msg:"To our creative genius whose paintings and artistic talent are always on another level! Your open-minded nature and warm soul make you truly one of a kind. Keep creating beautiful masterpieces and inspiring the world. Happy Raksha Bandhan, Jivika!"},
+  {id:"rajlaxmi",name:"Rajlaxmi",tag:"Charming & Stylish Painter",msg:"To our stylish and artistic Painter sister with an unmatched creative charm! No matter how much we tease you, your good heart and grace always shine through. May your life be filled with vibrant colors, success, and endless joy. Happy Raksha Bandhan, Rajlaxmi!"},
+  {id:"aaradhya",name:"Aaradhya",tag:"Silent & Trusted Secret Keeper",msg:"To my ultimate secret keeper who guards every memory and never reveals a thing! Even when you are quiet, your playful laughter and gentle smile brighten up everything around you. Thank you for being the sweetest and most dependable sister. Happy Raksha Bandhan, Aaradhya!"},
+  {id:"aarya",name:"Aarya",tag:"Hardworking Scholar & Topper",msg:"To the class superstar whose hard work and sharp focus always set the highest standard! Even if we do not talk constantly, your discipline and calm confidence are deeply inspiring. May you continue to achieve top honors in everything you strive for. Happy Raksha Bandhan, Aarya!"},
+  {id:"prerna",name:"Prerna",tag:"Joyful & Dreamy Sweetheart",msg:"To the sweetest sister who cheerfully lives in her own joyful, dreamy world! Your innocent charm and warm smile bring an easy, lighthearted calm to everyone around you. Stay wonderfully unique and always happy. Wishing you a blessed Raksha Bandhan, Prerna!"},
+  {id:"rijul",name:"Rijul",tag:"Dedicated Scholar & Bookworm",msg:"To our dedicated book lover whose passion for learning and studying knows no bounds! Your relentless curiosity and brilliant discipline will take you to extraordinary heights. Keep aiming high and breaking boundaries. Happy Raksha Bandhan, Rijul!"},
+  {id:"ganjan",name:"Ganjan",tag:"Hilarious Confidante",msg:"To my favorite partner-in-crime and the ultimate vault for all my secrets! Your effortless sense of humor and supportive presence make you an irreplaceable friend and sister. Thank you for always listening and having my back. Happy Raksha Bandhan, Ganjan!"},
+  {id:"murymmi",name:"Murymmi",tag:"Fiery Spirit & Golden Heart",msg:"To the sister with a bold attitude on top and a heart of pure gold inside! Just like Chimu didi, your fiery personality and bright energy make life so much more fun. Keep rocking with that confident spirit. Happy Raksha Bandhan, Murymmi!"},
+  {id:"ishanvi",name:"Ishanvi",tag:"Perfectionist & Sweet Soul",msg:"To our super-organized perfectionist who keeps everything in flawless order! We might tease you about your routines, but your fun and caring nature makes every moment delightful. Stay as bright, neat, and cheerful as always. Happy Raksha Bandhan, Ishanvi!"},
+  {id:"devika",name:"Devika",tag:"Calm & Wise Introvert",msg:"To the quiet sister who does not speak often, but always shares the sweetest and most thoughtful words! Your calm perspective, gentle humor, and warm heart make you so special to all of us. Wishing you lifelong peace, joy, and success. Happy Raksha Bandhan, Devika!"},
+  {id:"harshada",name:"Harshada",tag:"Sunshine & Non-Stop Joker",msg:"To the shortest in height but easily the biggest source of non-stop laughter and cute energy! Your hilarious jokes and cheerful presence never fail to lift everyone's mood. Keep smiling and spreading your irresistible fun everywhere. Happy Raksha Bandhan, Harshada!"},
+  {id:"vedantika",name:"Vedantika",tag:"Hilarious & Sweetest Target",msg:"To the sister we love teasing the absolute most, but who always takes it with the sweetest smile! Your hilarious reactions, funny jokes, and genuine golden heart make every moment so memorable. Never change your joyful spirit. Happy Raksha Bandhan, Vedantika!"}
+];
+
+// Mount Horizontal Cards (2-Card Visible Ratio)
+var grid=document.getElementById("sg");
+S.forEach(function(s){
+  var b=document.createElement("button");
+  b.className="sb";
+  b.innerHTML="<div class=\"sav\">"+s.name.charAt(0)+"</div><span class=\"snm\">"+s.name+"</span><span class=\"stg\">"+s.tag+"</span>";
+  b.addEventListener("click",function(){show(s);});
+  grid.appendChild(b);
+});
+
+var flipper=document.getElementById("cf"),cn=document.getElementById("cn"),ct=document.getElementById("ct"),cm=document.getElementById("cm");
+
+function show(s){
+  cn.textContent=s.name;
+  ct.textContent=s.tag;
+  cm.textContent=s.msg;
+  flipper.classList.add("flipped");
+  popFestive();
+}
+
+document.getElementById("bback").addEventListener("click",function(){flipper.classList.remove("flipped");});
+
+// Interactive Rakhi Tap Sparks
+document.getElementById("rakhiHero").addEventListener("click",function(){
+  var g=["#FFD700","#FFFACD","#FFA500","#FFFFFF"];
+  confetti({particleCount:35,spread:60,origin:{x:0.5,y:0.3},colors:g,zIndex:9999});
+});
+
+function popFestive(){
+  var g=["#FFD700","#FFA500","#FFF8A0","#FF8C00","#FFFFFF"];
+  var w=["#FF4500","#FFD700","#FF8C00","#FF69B4","#FFA500"];
+  setTimeout(function(){confetti({particleCount:60,angle:60,spread:70,origin:{x:0.02,y:0.65},colors:g,zIndex:9999});},0);
+  setTimeout(function(){confetti({particleCount:60,angle:120,spread:70,origin:{x:0.98,y:0.65},colors:g,zIndex:9999});},90);
+  setTimeout(function(){confetti({particleCount:85,spread:110,origin:{x:0.5,y:0.45},colors:w,zIndex:9999});},280);
+}
+
+document.getElementById("bcel").addEventListener("click",function(){
+  var g=["#FFD700","#D4AF37","#FFF8A0","#FF8C00","#FFFFFF"];
+  var w=["#FF4500","#FFD700","#FF8C00","#FFA500","#FF1493"];
+  var wh=["#FFFFFF","#FFF8DC","#FFD700","#FFFACD"];
+  setTimeout(function(){confetti({particleCount:75,angle:60,spread:75,origin:{x:0.05,y:0.7},colors:g,ticks:240,gravity:0.8,scalar:1.05,zIndex:9999});},0);
+  setTimeout(function(){confetti({particleCount:75,angle:120,spread:75,origin:{x:0.95,y:0.7},colors:g,ticks:240,gravity:0.8,scalar:1.05,zIndex:9999});},90);
+  setTimeout(function(){confetti({particleCount:70,angle:75,spread:70,origin:{x:0.1,y:0.95},colors:w,ticks:220,gravity:0.75,scalar:0.95,zIndex:9999});confetti({particleCount:70,angle:105,spread:70,origin:{x:0.9,y:0.95},colors:w,ticks:220,gravity:0.75,scalar:0.95,zIndex:9999});},240);
+  setTimeout(function(){confetti({particleCount:110,angle:90,spread:140,origin:{x:0.5,y:0.1},colors:g,ticks:350,gravity:0.6,scalar:1.2,zIndex:9999});},440);
+  setTimeout(function(){confetti({particleCount:80,spread:360,origin:{x:0.5,y:0.5},colors:wh,ticks:200,gravity:1.0,scalar:0.9,startVelocity:30,zIndex:9999});},720);
+});
+
+// Automatic Opening Confetti
+window.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    var g=["#FFD700","#D4AF37","#FFFACD","#FFA500","#FFFFFF"];
+    confetti({particleCount:50,angle:60,spread:60,origin:{x:0.02,y:0.65},colors:g,zIndex:9999});
+    confetti({particleCount:50,angle:120,spread:60,origin:{x:0.98,y:0.65},colors:g,zIndex:9999});
+    setTimeout(function(){
+      confetti({particleCount:70,spread:110,origin:{x:0.5,y:0.35},colors:g,ticks:260,gravity:0.7,scalar:1.1,zIndex:9999});
+    },300);
+  },400);
+});
+
+// Ambient Gold Dust Canvas
+(function(){
+  var cv=document.getElementById("bg"),ctx=cv.getContext("2d"),W,H,ps=[];
+  function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+  function init(){
+    resize();ps=[];
+    var count=Math.min(Math.floor(W*H/7500),50);
+    for(var i=0;i<count;i++){
+      ps.push({
+        x:Math.random()*W,y:Math.random()*H,
+        r:Math.random()*1.8+0.5,
+        vx:(Math.random()-0.5)*0.32,
+        vy:-(Math.random()*0.42+0.16),
+        a:Math.random()*0.7+0.1,
+        ad:Math.random()>0.5?1:-1,
+        as:Math.random()*0.008+0.003
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<ps.length;i++){
+      var p=ps[i];
+      p.x+=p.vx;p.y+=p.vy;p.a+=p.as*p.ad;
+      if(p.a>=0.85||p.a<=0.05)p.ad*=-1;
+      if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
+      if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+      
+      var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4.5);
+      g.addColorStop(0,"rgba(255,215,0,"+p.a+")");
+      g.addColorStop(1,"transparent");
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r*4.5,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener("resize",init);
+  init();draw();
+})();
+</script>
+</body>
+</html>
